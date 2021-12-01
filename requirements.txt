@@ -1,0 +1,4 @@
+numpy
+Django==2.2.7
+djangorestframework
+Markdown==2.6.11

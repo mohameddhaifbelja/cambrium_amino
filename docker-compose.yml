@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+    python:
+
+      build: .
+      image: python:3.6
+      volumes:
+        - .:/amino
+      environment:
+        - HOSTNAME=db
+      ports:
+        - 8000:8000
+      command: bash -c "ls && pip install -r requirements.txt && python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
